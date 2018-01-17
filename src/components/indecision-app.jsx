@@ -67,15 +67,15 @@ export default class IndectionApp extends React.Component {
                     title={title}
                     subTitle={subTitle}
                 />
-                <OptionList
-                    optionList={this.state.optionList}
-                    handleDeleteAllOptions={this.handleDeleteAllOptions}
-                    handleDeleteOption={this.handleDeleteOption}
-                />
                 <OptionModal
                     selectedOption={this.state.selectedOption}
                     hasOptions={this.state.optionList.length > 0}
                     handleMakeDecision={this.handleMakeDecision}
+                />
+                <OptionList
+                    optionList={this.state.optionList}
+                    handleDeleteAllOptions={this.handleDeleteAllOptions}
+                    handleDeleteOption={this.handleDeleteOption}
                 />
                 <AddOption
                     handleAddOption={this.handleAddOption}

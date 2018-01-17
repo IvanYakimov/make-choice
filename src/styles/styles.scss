@@ -1,9 +1,23 @@
 $brand-color: #2c3e50;
+$brand-weight: 300;
+$brand-size: 18px;
+$brand-family: 'Montserrat', sans-serif;
+
+$back-color: white;
 
 * {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $brand-family;
     color: $brand-color;
-    font-size: 18px;
+    font-size: $brand-size;
+    font-weight: $brand-weight;
+}
+
+h1 {
+    font-size: 200%;
+}
+
+h2 {
+    font-size: 90%;
 }
 
 body {
@@ -16,22 +30,6 @@ body {
 .row {
     margin: 5% 5%;
     padding: 2% 5%;
-    background: rgba(255, 255, 255, 1);
-    box-shadow: 2x 2x 2px $brand-color;
-    transition: 1s;
-}
-
-.option {
-    margin: 10px 0px;
-    padding: 5px 5px;
-    text-transform: uppercase;
-}
-
-.option i {
-    margin: 0 0 0 10px;
-    font-size: 100%;
-}
-
-.option i:hover {
-    cursor: pointer;
+    background: $back-color;
+    box-shadow: 4x 4x 8px $brand-color;
 }

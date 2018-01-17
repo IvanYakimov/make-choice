@@ -1,12 +1,14 @@
 import React from 'react';
+import ListItem from 'material-ui/List';
 
 const Option = (props) => (
     <div className='option'>
-        {props.optionText}
-        <i
-            className='ion-ios-close-empty'
+        
+        <button
             onClick={() => props.handleDeleteOption(props.optionText)}
-        />
+        >
+        delete
+        </button>
     </div>
 );
 
