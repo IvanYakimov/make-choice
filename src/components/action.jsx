@@ -9,12 +9,6 @@ const Action = (props) => (
             onClick={props.handleMakeDecision}
             disabled={!props.hasOptions}
         />
-        {/* <button
-            className='pure-button'
-            onClick={props.handleMakeDecision}
-            disabled={!props.hasOptions}>
-            Что мне делать?
-            </button> */}
     </div>
 );
 

@@ -14,7 +14,6 @@ const OptionList = (props) => {
                 onClick={props.handleDeleteAllOptions}
                 secondary={true}
             />
-            {props.optionList.length === 0 && <p> Пожалуйста, дабавьте вариант</p>}
             {
                 props.optionList.map((option, idx) =>
                     <Option key={uniq_key_counter++} optionText={option}

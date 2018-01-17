@@ -7,12 +7,12 @@ import Action from './action';
 import Header from './header';
 
 export default class IndectionApp extends React.Component {
-    state = { 
+    state = {
         optionList: [],
-        selectedOption: undefined, 
+        selectedOption: undefined,
     }
 
-    handleClearOption = () => this.setState( () => ({selectedOption: undefined}) );
+    handleClearOption = () => this.setState(() => ({ selectedOption: undefined }));
 
     handleDeleteAllOptions = () => this.setState(() => ({ optionList: [] }));
 
@@ -67,21 +67,18 @@ export default class IndectionApp extends React.Component {
                     title={title}
                     subTitle={subTitle}
                 />
-                <Action
-                    hasOptions={this.state.optionList.length > 0}
-                    handleMakeDecision={this.handleMakeDecision}
-                />
                 <OptionList
                     optionList={this.state.optionList}
                     handleDeleteAllOptions={this.handleDeleteAllOptions}
                     handleDeleteOption={this.handleDeleteOption}
                 />
-                <AddOption
-                    handleAddOption={this.handleAddOption}
-                />
                 <OptionModal
                     selectedOption={this.state.selectedOption}
-                    handleClearOption={this.handleClearOption}
+                    hasOptions={this.state.optionList.length > 0}
+                    handleMakeDecision={this.handleMakeDecision}
+                />
+                <AddOption
+                    handleAddOption={this.handleAddOption}
                 />
             </div>
         );

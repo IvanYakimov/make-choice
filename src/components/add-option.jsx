@@ -24,6 +24,7 @@ export default class AddOption extends React.Component {
                 <TextField
                     id='input'
                     errorText={this.state.error}
+                    hintText='Мой вариант'
                     onKeyPress={(event) => {
                         if (event.key == 'Enter')
                             this.addOption()
@@ -32,7 +33,6 @@ export default class AddOption extends React.Component {
                         this.setState(prev => ({error: undefined}));
                     }}
                     />
-                <br></br>
                 <RaisedButton
                     label="Добавить"
                     primary={true}
