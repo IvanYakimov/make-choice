@@ -1,30 +1,43 @@
 import React from 'react';
 
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+
 export default class AddOption extends React.Component {
     state = {
         error: undefined,
-    }; 
+    };
 
     addOption = (event) => {
-        event.preventDefault();
-        const input = event.target.querySelector('input[name=addOption]');
+        // event.preventDefault();
+        const input = document.querySelector('#input');
         const option = input.value.trim();
         const error = this.props.handleAddOption(option);
         this.setState(() => ({ error }));
-        if (!error)
+        if (! error)
             input.value = '';
     }
 
     render() {
         return (
             <div className='add-option-btn'>
-                {this.state.error && <p> {this.state.error} </p>}
-                <form className="pure-form" onSubmit={this.addOption}>
-                    <input type='text' name='addOption' />
-                    <button className='pure-button pure-button-primary'>
-                        Добавить
-                    </button>
-                </form>
+                <TextField
+                    id='input'
+                    errorText={this.state.error}
+                    onKeyPress={(event) => {
+                        if (event.key == 'Enter')
+                            this.addOption()
+                    }}
+                    onChange={() => {
+                        this.setState(prev => ({error: undefined}));
+                    }}
+                    />
+                <br></br>
+                <RaisedButton
+                    label="Добавить"
+                    primary={true}
+                    onClick={this.addOption}
+                />
             </div>
         );
     }

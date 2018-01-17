@@ -1,5 +1,7 @@
 import React from 'react';
 
+import RaisedButton from 'material-ui/RaisedButton';
+
 import Option from './option'
 
 const OptionList = (props) => {
@@ -7,9 +9,11 @@ const OptionList = (props) => {
     return (
         <div className='option-list'>
             <h3> Варианты </h3>
-            <button onClick={props.handleDeleteAllOptions} className='button-remove pure-button'>
-                Удалить все
-            </button>
+            <RaisedButton
+                label="Удалить все"
+                onClick={props.handleDeleteAllOptions}
+                secondary={true}
+            />
             {props.optionList.length === 0 && <p> Пожалуйста, дабавьте вариант</p>}
             {
                 props.optionList.map((option, idx) =>

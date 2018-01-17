@@ -15,23 +15,10 @@ body {
 
 .row {
     margin: 5% 5%;
-    padding: 2% 2%;
+    padding: 2% 5%;
     background: rgba(255, 255, 255, 1);
-    border-radius: 0px;
     box-shadow: 2x 2x 2px $brand-color;
-}
-
-button {
-    margin: 2px 2px;
-}
-
-input {
-    margin: 2px 2px;
-}
-
-.button-remove {
-    background: rgb(202, 60, 60); /* this is a maroon */
-    color: white;
+    transition: 1s;
 }
 
 .option {
