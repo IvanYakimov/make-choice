@@ -1,0 +1,50 @@
+$brand-color: #2c3e50;
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    color: $brand-color;
+    font-size: 18px;
+}
+
+body {
+    background-image: url('https://drivenlocal.com/wp-content/uploads/2015/10/Material-design.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.row {
+    margin: 5% 5%;
+    padding: 2% 2%;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 0px;
+    box-shadow: 2x 2x 2px $brand-color;
+}
+
+button {
+    margin: 2px 2px;
+}
+
+input {
+    margin: 2px 2px;
+}
+
+.button-remove {
+    background: rgb(202, 60, 60); /* this is a maroon */
+    color: white;
+}
+
+.option {
+    margin: 10px 0px;
+    padding: 5px 5px;
+    text-transform: uppercase;
+}
+
+.option i {
+    margin: 0 0 0 10px;
+    font-size: 100%;
+}
+
+.option i:hover {
+    cursor: pointer;
+}
