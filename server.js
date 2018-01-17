@@ -6,22 +6,7 @@ const fs = require('fs');
 const port = process.env.PORT || 3000;
 /* . */
 
-const data = {
-    'home.hbs': {
-        pageTitle: 'Home',
-        welcomeMessage: 'Portfolio page',
-    },
-    'about.hbs': {
-        pageTitle: 'About me',
-    },
-    'projects.hbs': {
-        pageTitle: 'Projects',
-    },
-}
-
-hbs.registerPartials(`${__dirname}/views/partials`);
 hbs.registerHelper('getCurrentYear', () => new Date().getFullYear());
-hbs.registerHelper('screamIt', text => text.toUpperCase());
 
 let app = express();
 app.set('view engine', 'hbs');
@@ -36,24 +21,7 @@ app.use((request, response, next) => {
 });
 
 app.use((request, response, next) => {
-    fs.readdir('views', (err, files) => {
-        if (err) {
-            response.send({ status: 'Invalid path' });
-        } else {
-            const getFileName = path => {
-                return path == '/' ?
-                    'home.hbs' :
-                    `${path.substr(1)}.hbs`;
-            };
-            const method = request.method;
-            const reqFile = getFileName(request.path);
-            const fileList = files.filter(x => x.match(/.hbs/));
-            if (fileList.find(x => x === reqFile))
-                response.render(reqFile, data[reqFile]);
-            else
-                response.send({ status: '404' });
-        };
-    });
+    response.render('home.hbs');
 });
 
 app.listen(port, () => {
